@@ -7,15 +7,14 @@ import { Colors } from '../../theme/colors';
 export default function OTPScreen() {
     const { email } = useLocalSearchParams<{ email: string }>();
     const [otp, setOtp] = useState('');
-    const { login } = useUser();
+    const { login, completeOnboarding } = useUser();
 
     const handleVerify = () => {
         // Simulate verification
         if (otp.length === 4) {
             login(email || 'user@example.com');
-            // Redirect to onboarding (or check if already onboarded in _layout)
-            // For this flow, we force onboarding next.
-            router.replace('/(auth)/onboarding');
+            completeOnboarding({});
+            router.replace('/(tabs)/profile');
         }
     };
 

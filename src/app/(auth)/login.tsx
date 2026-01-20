@@ -33,9 +33,7 @@ export default function LoginScreen() {
                 <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.linkButton} onPress={() => router.replace('/(auth)/signup')}>
-                <Text style={styles.linkText}>New Player? Register</Text>
-            </TouchableOpacity>
+
         </View>
     );
 }
